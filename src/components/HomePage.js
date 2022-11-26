@@ -84,6 +84,9 @@ const HomePage = () => {
                     value={currentPuzzle}
                     onChange={handleChangePuzzle}
                     sx={{ width: 200 }}
+                    InputProps={{
+                        readOnly: showError,
+                    }}
                 >
                     {Array.from(Array(puzzles.length).keys()).map(
                         (_, index) => {
@@ -107,6 +110,9 @@ const HomePage = () => {
                         value={input}
                         onChange={handleInputChange}
                         type='search'
+                        InputProps={{
+                            readOnly: showError || showSuccess,
+                        }}
                     />
                     <Button
                         onClick={handleSubmit}
