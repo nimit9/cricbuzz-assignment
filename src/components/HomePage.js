@@ -60,6 +60,11 @@ const HomePage = () => {
         if (reason === "clickaway") {
             return;
         }
+        if (showSuccess) {
+            setInput("");
+            setSearchedCoordinates({});
+            setSearchedWords([]);
+        }
         setShowError(false);
         setShowSuccess(false);
     };
